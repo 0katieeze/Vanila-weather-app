@@ -72,6 +72,11 @@ a {
   top: -34px;
 }
 
-.wind_ms {
-  text-transform: lowercase;
+.weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
