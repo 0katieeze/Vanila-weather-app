@@ -2,10 +2,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
-.row {
+/* .row {
   display: flex;
   justify-content: space-between;
-}
+} */
 
 h1 {
   color: #878787;
@@ -24,6 +24,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+  text-transform: capitalize;
   color: rgb(135, 135, 135);
   font-size: 16px;
   font-weight: 100;
@@ -57,7 +58,7 @@ a {
 
 .weather-temperature strong {
   color: rgb(33, 33, 33);
-  font-size: 65px;
+  font-size: 60px;
   line-height: 1;
   font-weight: 400;
 }
@@ -66,4 +67,8 @@ a {
   position: relative;
   font-size: 16px;
   top: -34px;
+}
+
+.wind_ms {
+  text-transform: lowercase;
 }
