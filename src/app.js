@@ -44,9 +44,22 @@ function displayTemperatrue(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "3ac97a041e12908913cecd5b271fe891";
-let city = "Seoul";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "3ac97a041e12908913cecd5b271fe891";
+  // let city = "Seoul";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  // console.log(apiUrl);
+  axios.get(apiUrl).then(displayTemperatrue);
+}
 
-// console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperatrue);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+  // console.log(cityInputElement.value);
+}
+
+search("Seoul");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
