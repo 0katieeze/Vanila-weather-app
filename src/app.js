@@ -22,6 +22,40 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2">
+          <div class="weather-forecast-date">
+            ${day}
+          </div>
+          <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="" width="42">
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperatures-max">
+              29º
+            </span>
+            <span class="weather-forecast-temperatures-min">
+              22º
+            </span>
+          </div>
+        </div>
+  
+    `;
+    forecastElement.innerHTML = forecastHTML;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function displayTemperatrue(response) {
   // console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
@@ -97,3 +131,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displaycelsiusTemperature);
 
 search("Seoul");
+displayForecast();
